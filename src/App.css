@@ -1,0 +1,26 @@
+.search{
+  background-color: white;
+  color: orange;
+  height: 15vh;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+.search>i{
+  font-size: 3rem;
+  margin-right: .5rem;
+}
+.search>input{
+  position:absolute ;
+
+  background-color: white;
+  color: orange;
+  font-size: 3rem;
+  outline: none;
+  border: none;
+}
+.home{
+  padding: 0 2rem;
+}
