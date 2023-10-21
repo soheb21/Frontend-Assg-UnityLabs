@@ -20,9 +20,9 @@ const Home = () => {
   return (
 
     <>
-      <div className="search">
-        <i className="fa-solid fa-magnifying-glass"></i>
-        <input onChange={(e) => setSearchData(e.target.value)} type="search" placeholder='search...' />
+      <div className="search h-15 -2 flex justify-center items-center bg-orange-400 text-white text-lg">
+        <i className="p-2 text-4xl fa-solid fa-magnifying-glass"></i>
+        <input className='w-full mr-2 p-2 rounded-md outline-none text-orange-700 font-semibold' onChange={(e) => setSearchData(e.target.value)} type="search" placeholder='search...' />
       </div >
 
       {
