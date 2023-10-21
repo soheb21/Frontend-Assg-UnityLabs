@@ -1,15 +1,18 @@
-import axios from 'axios';
+
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchDataAsync, selectAllData, selectLoading } from '../redux/storeSlice';
+import ClipLoader from "react-spinners/ClipLoader";
 
+const override ={display:"grid",borderColor:"orange", margin:"auto"};
 
 const Home = () => {
 
   const [searchData, setSearchData] = useState("");
   const data = useSelector(selectAllData);
   const loading = useSelector(selectLoading);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -27,15 +30,24 @@ const Home = () => {
 
       {
         loading
-          ? <h1>Loading...</h1>
+          ? <ClipLoader
+            loading={loading}
+            cssOverride={override}
+            size={150}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+          />
           : data?.map((item, index) => (
 
-            <div key={index} className="home">
-              <Link to={`/${item.objectID}`}>
-                <h1>Author: {item.author}</h1>
-                <br />
-                <p>Title: {item.title}</p>
+            <div key={index} className="home relative ">
+
+              <Link to={`/${item.objectID}`} className="block max-w-full scroll-smooth p-6 m-4 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Author: {item.author}</h5>
+                <p className="font-normal text-gray-700 dark:text-gray-400">Title: {item.title}</p>
+                <p className='font-normal text-orange-700 dark:text-orange-400'>Read More</p>
+
               </Link>
+
             </div>
 
           ))}

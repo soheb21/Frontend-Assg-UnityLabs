@@ -3,7 +3,7 @@ import axios from "axios";
 export const fetchData = async (searchData) => {
     try {
         const response = await axios.get(`http://hn.algolia.com/api/v1/search?query=${searchData}`);
-        console.log("res",response.data)
+        // console.log("res",response.data)
         return response.data.hits
     } catch (error) {
         console.log("fetching error", error)
