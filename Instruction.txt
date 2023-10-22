@@ -1,0 +1,8 @@
+how to run this project in localhost:
+step 1: create an empty folder then open this folder in vs code then clone this project by git clone ./ in vs code
+step 2:now install all dependency by npm install
+step 3: last step type npm run dev.
+
+if live website does not showing anything then Allow your insecure content in the browser sitting because in these  webiste i'm using 3rd party API that's why
+follow this steps https://stackoverflow.com/questions/37387711/page-loaded-over-https-but-requested-an-insecure-xmlhttprequest-endpoint
+Thank you..
